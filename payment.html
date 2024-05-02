@@ -1,0 +1,447 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Payment Page</title>
+    <link rel="icon" href="{{asset('assets/images/fav.png')}}">
+    <meta name="description" content="">
+    <script src="assets/libs/tailwind/tailwind.js"></script>
+    <link rel="stylesheet" href="assets/css/animista.css">
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/flowbite/1.8.0/flowbite.min.css" rel="stylesheet" />
+    <link rel="stylesheet" href="assets/css/custom.css">
+    <link rel="stylesheet" href="assets/css/status.css">
+    <link rel="stylesheet" href="assets/css/media-queries.css">
+
+<body>
+    <!-- Header -->
+    <header id="navbar" class="fixed top-0 left-0 right-0 z-[40]">
+        <div class="xl:px-10 sm:px-5 px-0 mx-auto">
+            <div class="grid grid-cols-7 gap-5 md:px-0 px-3">
+                <div class="flex items-center justify-start">
+                    <a href="#">
+                        <svg viewBox="0 0 101 80" class="w-[6rem] rounded-lg my-1" fill="none"
+                            xmlns="http://www.w3.org/2000/svg">
+                            <rect x="0.984375" width="100" height="80" fill="#007AFE" />
+                            <path
+                                d="M44.436 25.7803C44.436 27.717 44.0781 29.3587 43.3624 30.7053C42.6466 32.0518 41.6776 33.0746 40.4553 33.7737C39.2385 34.4728 37.8731 34.8223 36.359 34.8223C34.8394 34.8223 33.4712 34.4699 32.2545 33.7651C31.0377 33.0603 30.0714 32.0375 29.3557 30.6967C28.6454 29.3501 28.2903 27.7113 28.2903 25.7803C28.2903 23.8435 28.6454 22.2019 29.3557 20.8553C30.0714 19.5088 31.0377 18.4859 32.2545 17.7869C33.4712 17.0878 34.8394 16.7383 36.359 16.7383C37.8731 16.7383 39.2385 17.0878 40.4553 17.7869C41.6776 18.4859 42.6466 19.5088 43.3624 20.8553C44.0781 22.2019 44.436 23.8435 44.436 25.7803ZM40.2571 25.7803C40.2571 24.6343 40.1002 23.6659 39.7864 22.8752C39.478 22.0844 39.0321 21.4856 38.4485 21.0788C37.8704 20.672 37.1739 20.4685 36.359 20.4685C35.5497 20.4685 34.8532 20.672 34.2696 21.0788C33.686 21.4856 33.2372 22.0844 32.9234 22.8752C32.6151 23.6659 32.4609 24.6343 32.4609 25.7803C32.4609 26.9263 32.6151 27.8947 32.9234 28.6854C33.2372 29.4762 33.686 30.075 34.2696 30.4818C34.8532 30.8886 35.5497 31.092 36.359 31.092C37.1739 31.092 37.8704 30.8886 38.4485 30.4818C39.0321 30.075 39.478 29.4762 39.7864 28.6854C40.1002 27.8947 40.2571 26.9263 40.2571 25.7803Z"
+                                fill="white" />
+                            <path
+                                d="M50.7553 27.0524V34.5816H46.7168V21.3796H50.5571V23.8034H50.6975C50.9783 22.9955 51.4573 22.3623 52.1345 21.9039C52.8117 21.4398 53.6183 21.2077 54.5543 21.2077C55.4462 21.2077 56.2198 21.4169 56.875 21.8352C57.5357 22.2477 58.0477 22.8265 58.4111 23.5714C58.78 24.3105 58.9617 25.1758 58.9562 26.1671V34.5816H54.9177V26.9922C54.9232 26.2587 54.7442 25.6857 54.3809 25.2732C54.023 24.8606 53.5247 24.6543 52.886 24.6543C52.4621 24.6543 52.0877 24.7517 51.7629 24.9466C51.4435 25.1357 51.1958 25.4078 51.0196 25.7631C50.8489 26.1184 50.7608 26.5481 50.7553 27.0524Z"
+                                fill="white" />
+                            <path
+                                d="M67.2803 34.8309C65.9534 34.8309 64.8082 34.5587 63.8447 34.0144C62.8867 33.4643 62.1489 32.6821 61.6313 31.6679C61.1193 30.648 60.8633 29.4361 60.8633 28.0322C60.8633 26.6684 61.1221 25.4766 61.6396 24.4567C62.1571 23.431 62.8867 22.6345 63.8281 22.0672C64.7696 21.4942 65.8791 21.2077 67.1564 21.2077C68.0593 21.2077 68.8852 21.3538 69.634 21.6461C70.3828 21.9383 71.0297 22.3709 71.5748 22.9439C72.1199 23.5169 72.5438 24.2246 72.8466 25.0669C73.1494 25.9035 73.3008 26.8633 73.3008 27.9462V28.9948H62.2755V26.5538H69.5432C69.5376 26.1069 69.4358 25.7087 69.2376 25.3591C69.0394 25.0096 68.7668 24.7374 68.42 24.5426C68.0786 24.342 67.6849 24.2418 67.239 24.2418C66.7875 24.2418 66.3828 24.3478 66.025 24.5598C65.6671 24.7661 65.3835 25.0497 65.1743 25.4107C64.9651 25.766 64.855 26.1699 64.844 26.6226V29.1066C64.844 29.6452 64.9458 30.1179 65.1495 30.5248C65.3532 30.9259 65.6423 31.2382 66.0167 31.4616C66.3911 31.6851 66.8371 31.7968 67.3546 31.7968C67.7125 31.7968 68.0373 31.7453 68.3291 31.6421C68.6209 31.539 68.8714 31.3871 69.0807 31.1866C69.2899 30.986 69.4468 30.7396 69.5514 30.4474L73.2596 30.5591C73.1054 31.4244 72.7668 32.1779 72.2437 32.8197C71.7262 33.4557 71.0462 33.9513 70.2038 34.3066C69.3615 34.6561 68.3869 34.8309 67.2803 34.8309Z"
+                                fill="white" />
+                            <path
+                                d="M20.7207 44.4093H25.7833L30.0778 55.3078H30.276L34.5705 44.4093H39.6331V62.012H35.6524V51.1994H35.512L31.4487 61.9002H28.9051L24.8418 51.1392H24.7014V62.012H20.7207V44.4093Z"
+                                fill="white" />
+                            <path
+                                d="M47.9985 62.2612C46.6661 62.2612 45.5209 61.9776 44.5629 61.4103C43.6104 60.8373 42.8753 60.0408 42.3578 59.0209C41.8458 57.9952 41.5897 56.8062 41.5897 55.4539C41.5897 54.0959 41.8458 52.9069 42.3578 51.887C42.8753 50.8613 43.6104 50.0648 44.5629 49.4976C45.5209 48.9246 46.6661 48.6381 47.9985 48.6381C49.3309 48.6381 50.4733 48.9246 51.4258 49.4976C52.3838 50.0648 53.1189 50.8613 53.6309 51.887C54.1484 52.9069 54.4072 54.0959 54.4072 55.4539C54.4072 56.8062 54.1484 57.9952 53.6309 59.0209C53.1189 60.0408 52.3838 60.8373 51.4258 61.4103C50.4733 61.9776 49.3309 62.2612 47.9985 62.2612ZM48.0232 59.0897C48.5078 59.0897 48.9179 58.9349 49.2538 58.6255C49.5896 58.3161 49.8457 57.8863 50.0218 57.3363C50.2035 56.7862 50.2944 56.1501 50.2944 55.4282C50.2944 54.6947 50.2035 54.0529 50.0218 53.5029C49.8457 52.9528 49.5896 52.523 49.2538 52.2136C48.9179 51.9042 48.5078 51.7495 48.0232 51.7495C47.5222 51.7495 47.0983 51.9042 46.7514 52.2136C46.4101 52.523 46.1485 52.9528 45.9668 53.5029C45.7906 54.0529 45.7026 54.6947 45.7026 55.4282C45.7026 56.1501 45.7906 56.7862 45.9668 57.3363C46.1485 57.8863 46.4101 58.3161 46.7514 58.6255C47.0983 58.9349 47.5222 59.0897 48.0232 59.0897Z"
+                                fill="white" />
+                            <path
+                                d="M68.2667 48.81L63.9144 62.012H59.2895L54.9454 48.81H59.1987L61.5359 57.9035H61.668L64.0135 48.81H68.2667Z"
+                                fill="white" />
+                            <path
+                                d="M75.2302 62.2612C73.9033 62.2612 72.7581 61.9891 71.7946 61.4447C70.8365 60.8946 70.0988 60.1125 69.5812 59.0982C69.0692 58.0783 68.8132 56.8664 68.8132 55.4625C68.8132 54.0988 69.0719 52.9069 69.5895 51.887C70.107 50.8613 70.8365 50.0648 71.778 49.4976C72.7195 48.9246 73.8289 48.6381 75.1063 48.6381C76.0092 48.6381 76.8351 48.7842 77.5839 49.0764C78.3327 49.3686 78.9796 49.8013 79.5247 50.3743C80.0698 50.9473 80.4937 51.6549 80.7965 52.4972C81.0993 53.3338 81.2507 54.2936 81.2507 55.3766V56.4252H70.2254V53.9842H77.493C77.4875 53.5372 77.3857 53.139 77.1875 52.7895C76.9893 52.4399 76.7167 52.1678 76.3699 51.9729C76.0285 51.7724 75.6348 51.6721 75.1889 51.6721C74.7374 51.6721 74.3327 51.7781 73.9748 51.9901C73.617 52.1964 73.3334 52.48 73.1242 52.841C72.915 53.1963 72.8049 53.6003 72.7939 54.0529V56.5369C72.7939 57.0755 72.8957 57.5483 73.0994 57.9551C73.3031 58.3562 73.5922 58.6685 73.9666 58.892C74.341 59.1154 74.7869 59.2272 75.3045 59.2272C75.6624 59.2272 75.9872 59.1756 76.279 59.0725C76.5708 58.9693 76.8213 58.8175 77.0306 58.6169C77.2398 58.4164 77.3967 58.17 77.5013 57.8777L81.2094 57.9895C81.0553 58.8547 80.7167 59.6082 80.1936 60.25C79.6761 60.886 78.9961 61.3817 78.1537 61.7369C77.3114 62.0865 76.3368 62.2612 75.2302 62.2612Z"
+                                fill="white" />
+                        </svg>
+                    </a>
+
+                </div>
+                <div class="flex items-center lg:justify-start justify-center col-span-4 ">
+                    <div class="lg:flex hidden items-center gap-6 md:gap-[4rem] lg:gap-[2rem] font-outfit text-sm">
+
+                        <div class="nav_item text-[1.0625rem]">
+                            <a href="#">Get Quote</a>
+                        </div>
+                        <div class="nav_item text-[1.0625rem]"><a href="#">Active Requests</a></div>
+                        <div class="nav_item text-[1.0625rem]"><a href="/#video-section">How OneMove Works</a></div>
+                        <div class="nav_item text-[1.0625rem]"><a href="#">Contact us</a></div>
+                        <div class="nav_item text-[1.0625rem]"><a href="#">Blogs</a></div>
+
+                    </div>
+                </div>
+
+
+
+                <div class="flex items-center justify-end gap-3 col-span-2">
+
+                    <div class='group relative'>
+                        <button class="bg-[#F0B00C] px-4 py-3 rounded-xl text-[#000] flex items-center gap-2 ">
+                            <div class="text-sm truncate ">
+                                Login / Signup
+                            </div>
+                            <div>
+                                <svg width="18" height="18" viewBox="0 0 14 17" fill="none"
+                                    xmlns="http://www.w3.org/2000/svg">
+                                    <path fill-rule="evenodd" clip-rule="evenodd"
+                                        d="M6.7363 11.2373C3.82344 11.2373 1.33594 11.6777 1.33594 13.4415C1.33594 15.2053 3.80766 15.6615 6.7363 15.6615C9.64915 15.6615 12.1359 15.2203 12.1359 13.4573C12.1359 11.6942 9.66493 11.2373 6.7363 11.2373Z"
+                                        stroke="black" stroke-width="2" stroke-linecap="round"
+                                        stroke-linejoin="round" />
+                                    <path fill-rule="evenodd" clip-rule="evenodd"
+                                        d="M6.73502 8.72222C8.64656 8.72222 10.1959 7.17219 10.1959 5.26065C10.1959 3.34912 8.64656 1.7998 6.73502 1.7998C4.82349 1.7998 3.27346 3.34912 3.27346 5.26065C3.267 7.16573 4.80627 8.71576 6.71064 8.72222H6.73502Z"
+                                        stroke="black" stroke-width="2" stroke-linecap="round"
+                                        stroke-linejoin="round" />
+                                </svg>
+                            </div>
+                            <div>
+                                <svg width="18" height="18" viewBox="0 0 15 8" fill="none"
+                                    xmlns="http://www.w3.org/2000/svg">
+                                    <path fill-rule="evenodd" clip-rule="evenodd"
+                                        d="M1.9363 0.0102352C2.24407 0.0102351 2.55345 0.127252 2.78748 0.364492L7.50182 5.09807L12.213 0.364492C12.681 -0.106783 13.4424 -0.106783 13.9137 0.361285C14.3834 0.829353 14.3866 1.58916 13.9169 2.06044L8.353 7.65C7.90257 8.10365 7.10108 8.10365 6.64904 7.65L1.08512 2.06044C0.617054 1.58916 0.618658 0.829354 1.08833 0.361286C1.32236 0.127252 1.63013 0.0102352 1.9363 0.0102352"
+                                        fill="black" />
+                                </svg>
+                            </div>
+                        </button>
+
+                        <div
+                            class="group-hover:block hidden top-full absolute right-0 bg-white rounded-lg py-3 shadow-md border whitespace-nowrap min-w-[20ch]">
+
+
+                            <div
+                                class="py-2 px-5 flex items-center gap-2 justify-between cursor-pointer hover:bg-[#F0F7FF]">
+                                <a href="#" class="flex items-center gap-2 w-full">
+                                    <div>
+                                        <svg width="18" height="18" viewBox="0 0 18 17" fill="none"
+                                            xmlns="http://www.w3.org/2000/svg">
+                                            <path
+                                                d="M17.0311 10.9967H13.6576C12.4188 10.9959 11.4148 9.99266 11.4141 8.75396C11.4141 7.51526 12.4188 6.51199 13.6576 6.51123H17.0311"
+                                                stroke="#7B8493" stroke-width="1.5" stroke-linecap="round"
+                                                stroke-linejoin="round" />
+                                            <path d="M14.0409 8.70249H13.7811" stroke="#7B8493" stroke-width="1.5"
+                                                stroke-linecap="round" stroke-linejoin="round" />
+                                            <path fill-rule="evenodd" clip-rule="evenodd"
+                                                d="M5.45508 1.5H12.6579C15.0731 1.5 17.031 3.45793 17.031 5.87305V11.8539C17.031 14.269 15.0731 16.227 12.6579 16.227H5.45508C3.03996 16.227 1.08203 14.269 1.08203 11.8539V5.87305C1.08203 3.45793 3.03996 1.5 5.45508 1.5Z"
+                                                stroke="#7B8493" stroke-width="1.5" stroke-linecap="round"
+                                                stroke-linejoin="round" />
+                                            <path d="M4.86328 5.28159H9.36241" stroke="#7B8493" stroke-width="1.5"
+                                                stroke-linecap="round" stroke-linejoin="round" />
+                                        </svg>
+                                    </div>
+                                    <div>
+                                        <p class="text-sm text-[#101928]">Get Quote</p>
+                                    </div>
+                                </a>
+                            </div>
+
+                            <div
+                                class="py-2 px-5 flex items-center gap-2 justify-between cursor-pointer hover:bg-[#F0F7FF]">
+                                <a href="#" class="flex items-center gap-2 w-full">
+                                    <a href="#" class="flex items-center gap-2 w-full">
+                                        <div>
+                                            <svg width="18" height="18" viewBox="0 0 14 18" fill="none"
+                                                xmlns="http://www.w3.org/2000/svg">
+                                                <path fill-rule="evenodd" clip-rule="evenodd"
+                                                    d="M6.98712 11.7881C3.7641 11.7881 1.01172 12.2754 1.01172 14.227C1.01172 16.1786 3.74664 16.6833 6.98712 16.6833C10.2101 16.6833 12.9617 16.1952 12.9617 14.2444C12.9617 12.2936 10.2276 11.7881 6.98712 11.7881Z"
+                                                    stroke="#7B8493" stroke-width="1.5" stroke-linecap="round"
+                                                    stroke-linejoin="round" />
+                                                <path fill-rule="evenodd" clip-rule="evenodd"
+                                                    d="M6.98643 9.00474C9.10151 9.00474 10.8158 7.28966 10.8158 5.17458C10.8158 3.0595 9.10151 1.34521 6.98643 1.34521C4.87135 1.34521 3.15627 3.0595 3.15627 5.17458C3.14913 7.28252 4.8523 8.9976 6.95945 9.00474H6.98643Z"
+                                                    stroke="#7B8493" stroke-width="1.42857" stroke-linecap="round"
+                                                    stroke-linejoin="round" />
+                                            </svg>
+                                        </div>
+                                        <div>
+                                            <p class="text-sm text-[#101928]">Account</p>
+                                        </div>
+                                    </a>
+                            </div>
+                            <div
+                                class="py-2 px-5 flex items-center gap-2 justify-between cursor-pointer hover:bg-[#F0F7FF]">
+                                <div class="flex items-center gap-2 w-full">
+                                    <div>
+                                        <svg width="18" height="18" viewBox="0 0 18 18" fill="none"
+                                            xmlns="http://www.w3.org/2000/svg">
+                                            <path
+                                                d="M11.5119 5.1579V4.3804C11.5119 2.68457 10.1369 1.30957 8.44109 1.30957H4.37859C2.68359 1.30957 1.30859 2.68457 1.30859 4.3804V13.6554C1.30859 15.3512 2.68359 16.7262 4.37859 16.7262H8.44943C10.1403 16.7262 11.5119 15.3554 11.5119 13.6646V12.8787"
+                                                stroke="#7B8493" stroke-width="1.5" stroke-linecap="round"
+                                                stroke-linejoin="round" />
+                                            <path d="M17.1748 9.01774H7.14062" stroke="#7B8493" stroke-width="1.5"
+                                                stroke-linecap="round" stroke-linejoin="round" />
+                                            <path d="M14.7344 6.58838L17.1744 9.01755L14.7344 11.4475" stroke="#7B8493"
+                                                stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" />
+                                        </svg>
+                                    </div>
+                                    <div>
+                                        <button class="text-sm text-[#101928]" type="button"
+                                            data-modal-target="logoutModal" data-modal-toggle="logoutModal">
+                                            Logout
+                                        </button>
+                                    </div>
+                                </div>
+                            </div>
+
+
+                            <div
+                                class="py-2 px-5 flex items-center gap-2 justify-between cursor-pointer hover:bg-[#F0F7FF]">
+                                <a href="#" class="flex items-center gap-2 w-full">
+                                    <div>
+                                        <svg width="18" height="18" viewBox="0 0 14 18" fill="none"
+                                            xmlns="http://www.w3.org/2000/svg">
+                                            <path fill-rule="evenodd" clip-rule="evenodd"
+                                                d="M6.98712 11.7881C3.7641 11.7881 1.01172 12.2754 1.01172 14.227C1.01172 16.1786 3.74664 16.6833 6.98712 16.6833C10.2101 16.6833 12.9617 16.1952 12.9617 14.2444C12.9617 12.2936 10.2276 11.7881 6.98712 11.7881Z"
+                                                stroke="#7B8493" stroke-width="1.5" stroke-linecap="round"
+                                                stroke-linejoin="round" />
+                                            <path fill-rule="evenodd" clip-rule="evenodd"
+                                                d="M6.98643 9.00474C9.10151 9.00474 10.8158 7.28966 10.8158 5.17458C10.8158 3.0595 9.10151 1.34521 6.98643 1.34521C4.87135 1.34521 3.15627 3.0595 3.15627 5.17458C3.14913 7.28252 4.8523 8.9976 6.95945 9.00474H6.98643Z"
+                                                stroke="#7B8493" stroke-width="1.42857" stroke-linecap="round"
+                                                stroke-linejoin="round" />
+                                        </svg>
+                                    </div>
+                                    <div>
+                                        <p class="text-sm text-[#101928]">Login</p>
+                                    </div>
+                                </a>
+                            </div>
+                            <div
+                                class="py-2 px-5 flex items-center gap-2 justify-between cursor-pointer hover:bg-[#F0F7FF]">
+                                <a href="#" class="flex items-center gap-2 w-full">
+                                    <div>
+                                        <svg width="18" height="18" viewBox="0 0 14 18" fill="none"
+                                            xmlns="http://www.w3.org/2000/svg">
+                                            <path fill-rule="evenodd" clip-rule="evenodd"
+                                                d="M6.98712 11.7881C3.7641 11.7881 1.01172 12.2754 1.01172 14.227C1.01172 16.1786 3.74664 16.6833 6.98712 16.6833C10.2101 16.6833 12.9617 16.1952 12.9617 14.2444C12.9617 12.2936 10.2276 11.7881 6.98712 11.7881Z"
+                                                stroke="#7B8493" stroke-width="1.5" stroke-linecap="round"
+                                                stroke-linejoin="round" />
+                                            <path fill-rule="evenodd" clip-rule="evenodd"
+                                                d="M6.98643 9.00474C9.10151 9.00474 10.8158 7.28966 10.8158 5.17458C10.8158 3.0595 9.10151 1.34521 6.98643 1.34521C4.87135 1.34521 3.15627 3.0595 3.15627 5.17458C3.14913 7.28252 4.8523 8.9976 6.95945 9.00474H6.98643Z"
+                                                stroke="#7B8493" stroke-width="1.42857" stroke-linecap="round"
+                                                stroke-linejoin="round" />
+                                        </svg>
+                                    </div>
+                                    <div>
+                                        <p class="text-sm text-[#101928]">Register as a Customer</p>
+                                    </div>
+                                </a>
+                            </div>
+
+                            <div
+                                class="py-2 px-5 flex items-center gap-2 justify-between cursor-pointer hover:bg-[#F0F7FF]">
+                                <a href="#" class="flex items-center gap-2 w-full">
+                                    <div>
+                                        <svg width="18" height="18" viewBox="0 0 20 20" fill="none"
+                                            xmlns="http://www.w3.org/2000/svg">
+                                            <path d="M0.833984 18.3335H19.1673" stroke="#7B8493" stroke-width="1.5"
+                                                stroke-miterlimit="10" stroke-linecap="round" stroke-linejoin="round" />
+                                            <path d="M16.4824 18.3417V14.625" stroke="#7B8493" stroke-width="1.5"
+                                                stroke-miterlimit="10" stroke-linecap="round" stroke-linejoin="round" />
+                                            <path
+                                                d="M16.4994 9.0752C15.4827 9.0752 14.666 9.89187 14.666 10.9085V12.8002C14.666 13.8168 15.4827 14.6335 16.4994 14.6335C17.516 14.6335 18.3327 13.8168 18.3327 12.8002V10.9085C18.3327 9.89187 17.516 9.0752 16.4994 9.0752Z"
+                                                stroke="#7B8493" stroke-width="1.5" stroke-miterlimit="10"
+                                                stroke-linecap="round" stroke-linejoin="round" />
+                                            <path
+                                                d="M1.75 18.3333V5.02498C1.75 3.34998 2.58338 2.5083 4.24171 2.5083H9.43336C11.0917 2.5083 11.9167 3.34998 11.9167 5.02498V18.3333"
+                                                stroke="#7B8493" stroke-width="1.5" stroke-miterlimit="10"
+                                                stroke-linecap="round" stroke-linejoin="round" />
+                                            <path d="M4.83398 6.875H8.95899" stroke="#7B8493" stroke-width="1.5"
+                                                stroke-miterlimit="10" stroke-linecap="round" stroke-linejoin="round" />
+                                            <path d="M4.83398 10H8.95899" stroke="#7B8493" stroke-width="1.5"
+                                                stroke-miterlimit="10" stroke-linecap="round" stroke-linejoin="round" />
+                                            <path d="M6.875 18.3335V15.2085" stroke="#7B8493" stroke-width="1.5"
+                                                stroke-miterlimit="10" stroke-linecap="round" stroke-linejoin="round" />
+                                        </svg>
+                                    </div>
+                                    <div>
+                                        <p class="text-sm text-[#101928]">Register as a Company</p>
+                                    </div>
+                                </a>
+                            </div>
+
+
+                        </div>
+                    </div>
+                    <div>
+                        <button class='lg:hidden block mx-3 rounded-xl offcanvas-open'>
+                            <svg width="18" height="18" viewBox="0 0 18 16" fill="none"
+                                xmlns="http://www.w3.org/2000/svg">
+                                <path
+                                    d="M0.000128495 1.26316C0.000128495 0.565535 0.565663 0 1.26329 0H16.4212C17.1188 0 17.6843 0.565535 17.6843 1.26316C17.6843 1.96078 17.1188 2.52632 16.4212 2.52632H1.26329C0.565663 2.52632 0.000128495 1.96078 0.000128495 1.26316Z"
+                                    fill="#23272C" />
+                                <path
+                                    d="M0 8C0 7.30238 0.565535 6.73684 1.26316 6.73684H16.4211C17.1187 6.73684 17.6842 7.30238 17.6842 8C17.6842 8.69762 17.1187 9.26316 16.4211 9.26316H1.26316C0.565535 9.26316 0 8.69762 0 8Z"
+                                    fill="#23272C" />
+                                <path
+                                    d="M7.0736 14.7368C7.0736 14.0392 7.63914 13.4737 8.33676 13.4737H16.421C17.1186 13.4737 17.6841 14.0392 17.6841 14.7368C17.6841 15.4345 17.1186 16 16.421 16H8.33676C7.63914 16 7.0736 15.4345 7.0736 14.7368Z"
+                                    fill="#23272C" />
+                            </svg>
+                        </button>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+    </header>
+
+    <!-- Offcanvas -->
+    <div class="offcanvas-opacity inset-0 z-[201] fixed h-full w-full bg-black opacity-30 hidden"></div>
+    <section
+        class="offcanvas z-[202] bg-white w-[18.75rem] py-3 fixed h-[100vh] overflow-x-auto collapse-offcanvas hidden"
+        style="box-shadow: rgba(50, 50, 93, 0.25) 0px 13px 27px -5px, rgba(0, 0, 0, 0.3) 0px 8px 16px -8px;">
+        <div class="flex flex-col gap-3">
+            <div class="p-3 flex justify-between">
+                <div class="flex items-center gap-1 cursor-pointer relative text-sm dropdown-opener">
+
+                </div>
+                <div class="offcanvas-close h-[30px] w-[30px] flex justify-center items-center rounded-full border">
+                    <svg width="9" height="9" viewBox="0 0 9 9" fill="none" xmlns="http://www.w3.org/2000/svg">
+                        <path
+                            d="M4.48585 4.40247L7.79982 1M4.48585 4.40247L1.17188 7.80492M4.48585 4.40247L1.17188 1M4.48585 4.40247L7.79982 7.80492"
+                            stroke="#8E94A7" stroke-width="1.9038" stroke-linecap="round" stroke-linejoin="round" />
+                    </svg>
+                </div>
+            </div>
+
+            <div class="p-3 mobile-nav-items">
+                <h2 class="text-xl font-semibold">
+                    <a href="/get-quote">Get Quote</a>
+                </h2>
+            </div>
+
+            <div class="p-3 mobile-nav-items">
+                <h2 class="text-xl font-semibold">
+                    <a href="/#video-section">How OneMove Works</a>
+                </h2>
+            </div>
+
+            <div class="p-3 mobile-nav-items">
+                <h2 class="text-xl font-semibold">
+                    <a href="/active-requests">Active Requests</a>
+                </h2>
+            </div>
+
+            <div class="p-3 mobile-nav-items">
+                <h2 class="text-xl font-semibold">
+                    <a href="/blogs">Blogs</a>
+                </h2>
+            </div>
+            <div class="p-3 mobile-nav-items">
+                <h2 class="text-xl font-semibold">
+                    <a href="/contact">Contact us</a>
+                </h2>
+            </div>
+
+        </div>
+    </section>
+
+
+    <!-- Banner -->
+    <div class="bg-contact lg:h-[25rem] min-h-[25rem]">
+        <div
+            class="grid lg:grid-cols-2 gap-6 container md:w-[80%] mx-auto px-[2rem] h-full lg:py-0 pb-[2rem] pt-[5rem]">
+            <div class="flex items-center">
+                <div class="flex flex-col font-outfit">
+                    <h1 class="text-[#23272C] text-[2.5rem] md:text-[3.5rem] font-bold">Payments</h1>
+                </div>
+            </div>
+            <div class="flex items-end">
+                <img src="assets/images/Illustrations/payments.png" class="lg:h-[20rem] h-[15rem] mx-auto">
+            </div>
+        </div>
+    </div>
+    <!-- Banner -->
+
+    <!-- Section -->
+    <section>
+        <div class="bg-[#fff] py-[4rem]">
+            <div class="container xl:w-[75%] md:w-[80%] mx-auto px-[2rem]">
+                <div class="flex flex-col gap-8">
+                    <p>You need to pay the licensing fee to be able to accept an order with the Onemove Service.
+                        The licensing fee may be charged for a selected time period or for each completed order,
+                        depending on your selected city. Payments are recorded in your personal account.
+                        Licensing payments for a selected time period are valid from the moment of activation until
+                        the selected time period expires. No payments can be refunded to your account, even if you
+                        do not complete a single order during the active period.</p>
+                    <div class="bg-[#E8F3FF] px-[2rem] py-[1.2rem] text-[1.4rem]">
+                        <h1 class="font-bold">A licensing payment for a completed order is charged when the vehicle
+                            arrives at point A, or when you call the passenger before pressing the <span
+                                class="text-[#007AFE]">"I have arrived"</span> button.</h1>
+                    </div>
+                    <p>The payment is refunded to your account if the passenger cancels the order or does not
+                        appear. In this event, you should click "The passenger didn't come out." Refunds in such
+                        cases may take up to 30 days from the time when the order is verified by a manager.
+                        If you want to stop using the Mobile App, send a request to delete your account and dissolve
+                        the Licensing Agreement from your phone (tablet) via the "feedback" tab in the app.
+                        If there are unused funds in your account after you have written us about deleting the
+                        Mobile App and dissolving the Licensing Agreement, mail support@onemove.ae a scan of a
+                        written request to return the unused funds, together with the details of the bank account to
+                        receive the refund.
+                        The administrator does not provide cash refunds. The refund will be paid within 10 working
+                        days from receipt of your request in writing for a refund of unused funds.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+    <!-- Section -->
+    <section>
+        <div class="bg-[#fff] py-[1rem]">
+            <div class="container 2 md:w-[80%] mx-auto px-[2rem]">
+                <div class="flex items-center gap-8 justify-between md:flex-nowrap flex-wrap">
+                    <div class="flex items-center gap-5 md:flex-row flex-col">
+                        <div>
+                            <a href="#">
+                                <svg viewBox="0 0 101 80" class="w-[6rem] rounded-lg my-1" fill="none"
+                                    xmlns="http://www.w3.org/2000/svg">
+                                    <rect x="0.984375" width="100" height="80" fill="#007AFE" />
+                                    <path
+                                        d="M44.436 25.7803C44.436 27.717 44.0781 29.3587 43.3624 30.7053C42.6466 32.0518 41.6776 33.0746 40.4553 33.7737C39.2385 34.4728 37.8731 34.8223 36.359 34.8223C34.8394 34.8223 33.4712 34.4699 32.2545 33.7651C31.0377 33.0603 30.0714 32.0375 29.3557 30.6967C28.6454 29.3501 28.2903 27.7113 28.2903 25.7803C28.2903 23.8435 28.6454 22.2019 29.3557 20.8553C30.0714 19.5088 31.0377 18.4859 32.2545 17.7869C33.4712 17.0878 34.8394 16.7383 36.359 16.7383C37.8731 16.7383 39.2385 17.0878 40.4553 17.7869C41.6776 18.4859 42.6466 19.5088 43.3624 20.8553C44.0781 22.2019 44.436 23.8435 44.436 25.7803ZM40.2571 25.7803C40.2571 24.6343 40.1002 23.6659 39.7864 22.8752C39.478 22.0844 39.0321 21.4856 38.4485 21.0788C37.8704 20.672 37.1739 20.4685 36.359 20.4685C35.5497 20.4685 34.8532 20.672 34.2696 21.0788C33.686 21.4856 33.2372 22.0844 32.9234 22.8752C32.6151 23.6659 32.4609 24.6343 32.4609 25.7803C32.4609 26.9263 32.6151 27.8947 32.9234 28.6854C33.2372 29.4762 33.686 30.075 34.2696 30.4818C34.8532 30.8886 35.5497 31.092 36.359 31.092C37.1739 31.092 37.8704 30.8886 38.4485 30.4818C39.0321 30.075 39.478 29.4762 39.7864 28.6854C40.1002 27.8947 40.2571 26.9263 40.2571 25.7803Z"
+                                        fill="white" />
+                                    <path
+                                        d="M50.7553 27.0524V34.5816H46.7168V21.3796H50.5571V23.8034H50.6975C50.9783 22.9955 51.4573 22.3623 52.1345 21.9039C52.8117 21.4398 53.6183 21.2077 54.5543 21.2077C55.4462 21.2077 56.2198 21.4169 56.875 21.8352C57.5357 22.2477 58.0477 22.8265 58.4111 23.5714C58.78 24.3105 58.9617 25.1758 58.9562 26.1671V34.5816H54.9177V26.9922C54.9232 26.2587 54.7442 25.6857 54.3809 25.2732C54.023 24.8606 53.5247 24.6543 52.886 24.6543C52.4621 24.6543 52.0877 24.7517 51.7629 24.9466C51.4435 25.1357 51.1958 25.4078 51.0196 25.7631C50.8489 26.1184 50.7608 26.5481 50.7553 27.0524Z"
+                                        fill="white" />
+                                    <path
+                                        d="M67.2803 34.8309C65.9534 34.8309 64.8082 34.5587 63.8447 34.0144C62.8867 33.4643 62.1489 32.6821 61.6313 31.6679C61.1193 30.648 60.8633 29.4361 60.8633 28.0322C60.8633 26.6684 61.1221 25.4766 61.6396 24.4567C62.1571 23.431 62.8867 22.6345 63.8281 22.0672C64.7696 21.4942 65.8791 21.2077 67.1564 21.2077C68.0593 21.2077 68.8852 21.3538 69.634 21.6461C70.3828 21.9383 71.0297 22.3709 71.5748 22.9439C72.1199 23.5169 72.5438 24.2246 72.8466 25.0669C73.1494 25.9035 73.3008 26.8633 73.3008 27.9462V28.9948H62.2755V26.5538H69.5432C69.5376 26.1069 69.4358 25.7087 69.2376 25.3591C69.0394 25.0096 68.7668 24.7374 68.42 24.5426C68.0786 24.342 67.6849 24.2418 67.239 24.2418C66.7875 24.2418 66.3828 24.3478 66.025 24.5598C65.6671 24.7661 65.3835 25.0497 65.1743 25.4107C64.9651 25.766 64.855 26.1699 64.844 26.6226V29.1066C64.844 29.6452 64.9458 30.1179 65.1495 30.5248C65.3532 30.9259 65.6423 31.2382 66.0167 31.4616C66.3911 31.6851 66.8371 31.7968 67.3546 31.7968C67.7125 31.7968 68.0373 31.7453 68.3291 31.6421C68.6209 31.539 68.8714 31.3871 69.0807 31.1866C69.2899 30.986 69.4468 30.7396 69.5514 30.4474L73.2596 30.5591C73.1054 31.4244 72.7668 32.1779 72.2437 32.8197C71.7262 33.4557 71.0462 33.9513 70.2038 34.3066C69.3615 34.6561 68.3869 34.8309 67.2803 34.8309Z"
+                                        fill="white" />
+                                    <path
+                                        d="M20.7207 44.4093H25.7833L30.0778 55.3078H30.276L34.5705 44.4093H39.6331V62.012H35.6524V51.1994H35.512L31.4487 61.9002H28.9051L24.8418 51.1392H24.7014V62.012H20.7207V44.4093Z"
+                                        fill="white" />
+                                    <path
+                                        d="M47.9985 62.2612C46.6661 62.2612 45.5209 61.9776 44.5629 61.4103C43.6104 60.8373 42.8753 60.0408 42.3578 59.0209C41.8458 57.9952 41.5897 56.8062 41.5897 55.4539C41.5897 54.0959 41.8458 52.9069 42.3578 51.887C42.8753 50.8613 43.6104 50.0648 44.5629 49.4976C45.5209 48.9246 46.6661 48.6381 47.9985 48.6381C49.3309 48.6381 50.4733 48.9246 51.4258 49.4976C52.3838 50.0648 53.1189 50.8613 53.6309 51.887C54.1484 52.9069 54.4072 54.0959 54.4072 55.4539C54.4072 56.8062 54.1484 57.9952 53.6309 59.0209C53.1189 60.0408 52.3838 60.8373 51.4258 61.4103C50.4733 61.9776 49.3309 62.2612 47.9985 62.2612ZM48.0232 59.0897C48.5078 59.0897 48.9179 58.9349 49.2538 58.6255C49.5896 58.3161 49.8457 57.8863 50.0218 57.3363C50.2035 56.7862 50.2944 56.1501 50.2944 55.4282C50.2944 54.6947 50.2035 54.0529 50.0218 53.5029C49.8457 52.9528 49.5896 52.523 49.2538 52.2136C48.9179 51.9042 48.5078 51.7495 48.0232 51.7495C47.5222 51.7495 47.0983 51.9042 46.7514 52.2136C46.4101 52.523 46.1485 52.9528 45.9668 53.5029C45.7906 54.0529 45.7026 54.6947 45.7026 55.4282C45.7026 56.1501 45.7906 56.7862 45.9668 57.3363C46.1485 57.8863 46.4101 58.3161 46.7514 58.6255C47.0983 58.9349 47.5222 59.0897 48.0232 59.0897Z"
+                                        fill="white" />
+                                    <path
+                                        d="M68.2667 48.81L63.9144 62.012H59.2895L54.9454 48.81H59.1987L61.5359 57.9035H61.668L64.0135 48.81H68.2667Z"
+                                        fill="white" />
+                                    <path
+                                        d="M75.2302 62.2612C73.9033 62.2612 72.7581 61.9891 71.7946 61.4447C70.8365 60.8946 70.0988 60.1125 69.5812 59.0982C69.0692 58.0783 68.8132 56.8664 68.8132 55.4625C68.8132 54.0988 69.0719 52.9069 69.5895 51.887C70.107 50.8613 70.8365 50.0648 71.778 49.4976C72.7195 48.9246 73.8289 48.6381 75.1063 48.6381C76.0092 48.6381 76.8351 48.7842 77.5839 49.0764C78.3327 49.3686 78.9796 49.8013 79.5247 50.3743C80.0698 50.9473 80.4937 51.6549 80.7965 52.4972C81.0993 53.3338 81.2507 54.2936 81.2507 55.3766V56.4252H70.2254V53.9842H77.493C77.4875 53.5372 77.3857 53.139 77.1875 52.7895C76.9893 52.4399 76.7167 52.1678 76.3699 51.9729C76.0285 51.7724 75.6348 51.6721 75.1889 51.6721C74.7374 51.6721 74.3327 51.7781 73.9748 51.9901C73.617 52.1964 73.3334 52.48 73.1242 52.841C72.915 53.1963 72.8049 53.6003 72.7939 54.0529V56.5369C72.7939 57.0755 72.8957 57.5483 73.0994 57.9551C73.3031 58.3562 73.5922 58.6685 73.9666 58.892C74.341 59.1154 74.7869 59.2272 75.3045 59.2272C75.6624 59.2272 75.9872 59.1756 76.279 59.0725C76.5708 58.9693 76.8213 58.8175 77.0306 58.6169C77.2398 58.4164 77.3967 58.17 77.5013 57.8777L81.2094 57.9895C81.0553 58.8547 80.7167 59.6082 80.1936 60.25C79.6761 60.886 78.9961 61.3817 78.1537 61.7369C77.3114 62.0865 76.3368 62.2612 75.2302 62.2612Z"
+                                        fill="white" />
+                                </svg>
+                            </a>
+                        </div>
+                        <p class="text-[#23272C] text-sm md:text-left text-center">Whether you’re moving home,
+                            relocating your business or simply
+                            need a large item moved from one location to another, OneMove application perfectly
+                            tailored
+                            to your needs.</p>
+                    </div>
+                    <div
+                        class="flex items-center gap-5 text-sm md:w-fit w-full justify-center whitespace-nowrap md:justify-start">
+                        <p class="cursor-pointer"><a href="#">Privacy Policy</a></p>
+                        <p class="cursor-pointer"><a href="#">Payments</a></p>
+                        <p class="cursor-pointer"><a href="#">FAQ</a></p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+    <!-- Section -->
+
+    <!-- Section -->
+    <section>
+        <div class="bg-[#fff] py-[1rem] border-t">
+            <div class="container 2 md:w-[80%] mx-auto px-[2rem]">
+                <div
+                    class="flex items-center gap-4 md:gap-8 md:justify-between justify-center flex-wrap-reverse md:flex-nowrap ">
+                    <p class="text-[##23272C]/0.5 text-sm">© OneMove <span>
+                            <script>
+                                var date = new Date();
+                                document.write(date.getUTCFullYear());
+                            </script>
+                        </span> . All rights reserved.</p>
+                    <div class="flex items-center gap-4">
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+    </div>
